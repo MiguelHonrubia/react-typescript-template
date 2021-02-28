@@ -1,6 +1,7 @@
 import path from "path";
 import webpack from "webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const config: webpack.Configuration = {
   entry: "./src/index.tsx",
@@ -33,11 +34,18 @@ const config: webpack.Configuration = {
     filename: "bundle.js",
   },
   devServer: {
-    contentBase: path.join(__dirname, "build"),
+    port: 3000,
+    contentBase: path.join(__dirname, "dist"),
+    open: true,
     compress: true,
-    port: 4000,
+    watchContentBase: true,
+    historyApiFallback: true,
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src", "index.html"),
+      filename: "index.html",
+    }),
     new ForkTsCheckerWebpackPlugin({
       async: false,
       eslint: {
