@@ -7,18 +7,21 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.(ts|js)x?$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [
-              "@babel/preset-env",
-              "@babel/preset-react",
-              "@babel/preset-typescript",
-            ],
-          },
-        },
+        use: ["babel-loader"],
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|gif|ico)$/,
+        use: ["file-loader"],
+      },
+      {
+        test: /\.(eot|woff|ttf|woff2)$/,
+        use: ["url-loader"],
       },
     ],
   },
@@ -26,7 +29,7 @@ const config: webpack.Configuration = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
   devServer: {
