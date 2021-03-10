@@ -7,3 +7,5 @@ build
 *.css
 *.svg
 *.json
+lib
+contexts
