@@ -15,6 +15,7 @@ type AuthState = {
   logout: (history?: any) => void;
   saveUserPreferences: (user: Account) => void;
   saveSession: (token: string) => void;
+  login: (body: any) => boolean;
 };
 
 const reducer = createReducer({ payload: "user" });
@@ -28,6 +29,7 @@ const initialState = {
   logout: undefined,
   saveUserPreferences: undefined,
   saveSession: undefined,
+  login: undefined,
 };
 export const AuthContext = React.createContext<AuthState>(initialState);
 export const AuthProvider = ({ children }) => {
@@ -44,7 +46,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signin = (history) => {
-    console.log("entrooooooo");
     dispatch({ type: "fetching" });
     setSuccessSignOut(false);
     if (
@@ -56,17 +57,17 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // const Login = async (body) => {
-  //   const response = await login(body);
-  //   if (response) {
-  //     saveSession(response);
-  //     const user = await getUser();
-  //     if (user) {
-  //       saveUserPreferences(user);
-  //       return user;
-  //     }
-  //   }
-  // };
+  const login = (body) => {
+    const response = login(body);
+    if (response) {
+      saveSession(response);
+      const user = getUser();
+      if (user) {
+        saveUserPreferences(user);
+        return !!user;
+      }
+    }
+  };
 
   const logout = (history) => {
     dispatch({ type: "reset" });
@@ -76,7 +77,7 @@ export const AuthProvider = ({ children }) => {
     history.push("/login");
   };
 
-  const saveUserPreferences = (user: Account) => {
+  const saveUserPreferences = (user: any | Account) => {
     const UserConnected = {
       email: user.email,
       fullName: user.name,
@@ -100,6 +101,7 @@ export const AuthProvider = ({ children }) => {
         logout,
         saveUserPreferences,
         saveSession,
+        login,
       }}
     >
       {children}

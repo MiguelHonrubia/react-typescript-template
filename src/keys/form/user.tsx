@@ -1,6 +1,6 @@
 import { FormKeys } from "../../types/general/FormKeys";
 
-export const loginFormKeys: FormKeys[] = [
+export const LOGIN_FORM_KEYS: FormKeys[] = [
   {
     key: "email",
     placeholder: "pages.login.form.email",
@@ -10,12 +10,12 @@ export const loginFormKeys: FormKeys[] = [
   {
     key: "password",
     placeholder: "pages.login.form.password",
-    type: "string",
+    type: "password",
     position: 1,
   },
 ];
 
-export const registerFormKeys: FormKeys[] = [
+export const REGISTER_FORM_KEYS: FormKeys[] = [
   {
     key: "email",
     placeholder: "pages.login.form.email",

@@ -30,12 +30,9 @@ export const RouteWithAuth: React.FC<{
 }> = ({ component, path, exact }) => {
   const { isAuthenticated, user, signin } = useAuthValue();
   const history = useHistory();
-  console.log("entro 111");
 
   const authProcess = async () => {
-    console.log("entro en authprocess");
     if (!user && !isAuthenticated()) {
-      console.log("entro en if");
       signin(history);
     }
   };

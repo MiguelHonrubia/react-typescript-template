@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "author": "MiguelHonrubia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MiguelHonrubia/react-typescript-template.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -27,7 +31,8 @@
     "react-helmet": "^6.1.0",
     "react-dnd": "^11.1.3",
     "nprogress": "^0.2.0",
-    "use-async-resource": "^2.2.0"
+    "use-async-resource": "^2.2.0",
+    "react-hook-form": "^5.1.3"
   },
   "scripts": {
     "start": "webpack serve --mode development --open",

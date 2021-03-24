@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CoolContainer } from "../components/general/CoolContainer";
+import { CoolContainer } from "../styles/components/CoolContainer";
 import { Title, Container, Description } from "../styles/components/General";
 
 const Home: React.FC = () => {

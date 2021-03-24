@@ -17,7 +17,6 @@ const Snackbar = () => {
 };
 
 export const AppRoutes: React.FC = () => {
-  console.log("entro 222");
   return (
     <>
       <React.Suspense fallback={<Loader />}>

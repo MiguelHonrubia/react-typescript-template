@@ -1,7 +1,7 @@
 import Api from "./api";
 
 const requestOptions = {
-  baseUrl: process.env.VUE_APP_API_URL,
+  baseUrl: process.env.API_URL,
   defaultOptions: {},
 };
 
