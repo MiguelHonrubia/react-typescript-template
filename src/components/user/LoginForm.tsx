@@ -19,7 +19,13 @@ export const LoginForm: React.FC<FormProps<any>> = ({ onSubmit }) => {
       })}
     >
       <ContainerForm>
-        <Grid container spacing={3}>
+        <Grid
+          container
+          spacing={3}
+          direction="column"
+          justify="center"
+          alignItems="stretch"
+        >
           <Grid item xs={12}>
             <Grid
               container

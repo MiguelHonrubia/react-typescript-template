@@ -2,15 +2,13 @@ import * as React from "react";
 import { UserFormContainer } from "../../styles/components/CoolContainer";
 import { useHistory } from "react-router-dom";
 import { useSnackbarValue } from "../../contexts/snackbar";
-import { useAuthValue } from "../../contexts/auth";
 import { useTranslation } from "react-i18next";
 import { LoginForm } from "../../components/user/LoginForm";
 
-const Login: React.FC = () => {
+export const Login: React.FC = () => {
   const [loading, setLoading] = React.useState(false);
   const history = useHistory();
   const { showSnackbar } = useSnackbarValue();
-  const { login } = useAuthValue();
   const { t } = useTranslation();
 
   const handleOnSubmit = async (values) => {
@@ -28,11 +26,9 @@ const Login: React.FC = () => {
   };
 
   return (
-    <UserFormContainer>
+    <>
       <h1>Login</h1>
       <LoginForm onSubmit={handleOnSubmit} />
-    </UserFormContainer>
+    </>
   );
 };
-
-export default Login;

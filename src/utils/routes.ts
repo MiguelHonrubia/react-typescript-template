@@ -1,8 +1,7 @@
 import * as React from "react";
 
 const Home = React.lazy(() => import("../pages/Home"));
-const Login = React.lazy(() => import("../pages/user/Login"));
-const Register = React.lazy(() => import("../pages/user/Register"));
+const User = React.lazy(() => import("../pages/user/User"));
 
 export const routes = [
   {
@@ -17,13 +16,6 @@ export const routes = [
     name: "pages.login",
     authRequired: false,
     exact: true,
-    Component: Login,
-  },
-  {
-    path: "/register",
-    name: "pages.register",
-    authRequired: false,
-    exact: true,
-    Component: Register,
+    Component: User,
   },
 ];
