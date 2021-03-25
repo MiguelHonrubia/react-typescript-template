@@ -35,7 +35,11 @@ export const DataTable: React.FC<{
                 {headers.map(({ key, visible, template }, index) => {
                   const Temp = template;
                   if (!visible) {
-                    return <TableCell key={index}>{row[key]}</TableCell>;
+                    return (
+                      <TableCell key={index}>
+                        {Temp ? <Temp {...row} /> : row[key]}
+                      </TableCell>
+                    );
                   }
                 })}
               </TableRow>

@@ -5,9 +5,9 @@ import { DataTable } from "../../components/general/DataTable";
 import { LIST_KEYS } from "../../keys/list/user";
 
 let cont = 0;
-const createData = (firstname, lastname, email) => {
+const createData = (firstName, lastName, email) => {
   cont += 1;
-  return { id: cont, firstname, lastname, email };
+  return { id: cont, firstName, lastName, email };
 };
 
 const rows = [

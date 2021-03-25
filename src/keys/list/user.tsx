@@ -4,14 +4,15 @@ import { Link, Router } from "react-router-dom";
 import history from "../../lib/history";
 import { UserListTable } from "../../types/user/User";
 
-const TemplateLink: React.FC<UserListTable> = (props) => (
-  //   <Router history={history}>
-  //     <Link to={`/user/edit/${props.id}`} className="link">
-  //       {props.firstName}
-  //     </Link>
-  //   </Router>
-  <p>hola</p>
-);
+const TemplateLink: React.FC<UserListTable> = (user) => {
+  return (
+    <Router history={history}>
+      <Link to={`/user/edit/${user.id}`} className="link">
+        {user.firstName}
+      </Link>
+    </Router>
+  );
+};
 
 export const LIST_KEYS: DataTableField[] = [
   {
@@ -19,12 +20,12 @@ export const LIST_KEYS: DataTableField[] = [
     visible: false,
   },
   {
-    key: "firstname",
+    key: "firstName",
     template: TemplateLink,
     text: "user.list.firstname",
   },
   {
-    key: "lastname",
+    key: "lastName",
     text: "user.list.lastname",
   },
   {
