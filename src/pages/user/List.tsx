@@ -17,9 +17,6 @@ const rows = [
 ];
 
 export const List: React.FC = () => {
-  const [loading, setLoading] = React.useState(false);
-  const { t } = useTranslation();
-
   return (
     <CoolContainer>
       <DataTable headers={LIST_KEYS} dataSource={rows} />
