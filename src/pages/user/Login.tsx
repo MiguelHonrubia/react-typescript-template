@@ -1,5 +1,4 @@
 import * as React from "react";
-import { UserFormContainer } from "../../styles/components/CoolContainer";
 import { useHistory } from "react-router-dom";
 import { useSnackbarValue } from "../../contexts/snackbar";
 import { useTranslation } from "react-i18next";

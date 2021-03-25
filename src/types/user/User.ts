@@ -10,3 +10,10 @@ export type UserSession = {
   lastName: string;
   fullName: string;
 };
+
+export type UserListTable = {
+  id: number;
+  email: string;
+  firstName: string;
+  lastName: string;
+};
