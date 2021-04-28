@@ -37,6 +37,8 @@
   "scripts": {
     "start": "webpack serve --mode development --open",
     "build": "rimraf dist && webpack --mode production",
+    "build:dev": "rimraf dist && webpack --mode development",
+    "build:pre": "rimraf dist && webpack --mode staging",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -72,7 +74,6 @@
     "@types/webpack-dev-server": "^3.11.1",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
-    "babel-loader": "^8.2.2",
     "eslint": "^7.21.0",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
